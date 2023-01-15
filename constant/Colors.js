@@ -1,0 +1,25 @@
+import { StyleSheet } from "react-native";
+
+export const colors = StyleSheet.create({
+    primary: "#e85d00",
+    primary_light: "#f57100",
+    primary_shadow: "#f79120",
+    primary_yellow:"#e09031",
+    primary_light_yellow:"#e09031ad",
+    secondary: "#8559c9",
+    secondary_light:"#9a74d4",
+    secondary_shadow:"#ae8fdc",
+    tertiary: "#AEE8FD",
+    light_gray:"#afafaf",
+    success: "#90ee90",
+    danger: "#FF4848",
+    shadow: "#E7E8EA",
+    warning: "#FBD431",
+    info: "#F8F9FA",
+    light: "#F5F5F5",
+    dark: "#343A3F",
+    muted: "#707981",
+    white: "#FFFFFF",
+    black: "#000000",
+    gray:"#5c5b5d",
+  });
