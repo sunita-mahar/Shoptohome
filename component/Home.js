@@ -12,15 +12,17 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-// import SnapSlider from "./SnapSlider";
+
+
  
-export const Home=({navigation})=>{
+export const Home=()=>{
 
   return(
-      
-<View style={styles.main_container}>
 
-<ScrollView>
+ 
+ <View style={styles.main_container}>
+
+  <ScrollView>
   
     <View style={styles.home_top_container} >
       <View style={{flex: 0, flexDirection: 'row',  alignItems:"center", marginVertical:20, width: wp('100%'),}}>
@@ -43,38 +45,19 @@ export const Home=({navigation})=>{
     <View>
        <Slider/>
     </View>
-
-     {/* <View>
-      <SnapSlider/>
-    </View>  */}
-
-         
+  
           <View style={styles.inner_container}>
-          {/* <View style={styles.bold_LineStyle}></View>  */}
-              {/* <View  style={styles.banner_above_title}>
-                <Text style={styles.banner_title}>Up to 25% off | Grocery Products</Text>
-              </View> */}
-
             <View style={{flex:1, flexDirection:"row",}}>
               <View  style={{ width: wp('50%'),}} >
-                 
                  <Image source={require("../assets/images/banner1.webp")}style={styles.home_banner_image} />
-
-                {/* <ImageBackground source={require('../assets/images/banner_bg_img.jpg')} resizeMode="cover" style={styles.banner_bg_image} >
-                 <Image source={require("../assets/images/banner_img1.png")}style={styles.home_banner_image} />
-                </ImageBackground> */}
                 <Text style={styles.banner_below_title}>Double Flair Dress</Text> 
               </View>
              
               <View style={{width: wp('50%'),}}>
               <Image source={require("../assets/images/banner2.png")}style={styles.home_banner_image} />
-               {/* <ImageBackground source={require('../assets/images/banner_bg_img.jpg')} resizeMode="cover" style={styles.banner_bg_image} >
-                 <Image source={require("../assets/images/banner_img2.png")}style={styles.home_banner_image} />
-                </ImageBackground>  */}
-                <Text style={styles.banner_below_title}>Royal Pink Dress </Text>
+               <Text style={styles.banner_below_title}>Royal Pink Dress </Text>
               </View>
             </View>  
-              {/* <View style={styles.bold_LineStyle}></View> */}
           </View>
 
           <View>
@@ -82,9 +65,7 @@ export const Home=({navigation})=>{
           </View>
 
           <View style={{marginTop:-20,}}>
-            {/* <View style={[styles.lineStyle, {marginVertical:20,},]}></View> */}
-             <ToDoList/>
-            {/* <View style={styles.lineStyle}></View> */}
+            <ToDoList/>
           </View>
 
           <View style={{marginTop:20,}}>
@@ -100,8 +81,7 @@ export const Home=({navigation})=>{
         </ScrollView> 
   
     </View>
-   
-
+    
     )
 }
 
@@ -112,8 +92,6 @@ const styles = StyleSheet.create({
   },
 
   home_profile_img:{
-    // height:40,
-    // width:40,
     height: wp('10%'),
     width: wp('10%'),
   },
@@ -152,7 +130,6 @@ const styles = StyleSheet.create({
     },
 
     banner_bg_image:{
-       //height: 150,
        height: wp('100%'),
        justifyContent: 'center',
        marginHorizontal:21,
@@ -162,23 +139,12 @@ const styles = StyleSheet.create({
 
 
     home_banner_image:{
-        // height: 190,
-        // width:"90%",
         height: wp('50%'),
         width: wp('45%'),
          alignSelf:"center",
-          //padding:10,
           resizeMode:"contain",
           borderRadius:8,
       },
-
-    bold_LineStyle:{
-      // backgroundColor:"#ffffffd9",
-      // height:2,
-      // width:"100%",
-      // marginBottom:20,
-      // marginTop:30,
-    },
 
     
     bg_image: {
@@ -188,7 +154,6 @@ const styles = StyleSheet.create({
 
     
     banner_above_title:{
-      //width:"100%", 
       height: wp('100%'),
        marginLeft:20, 
     },

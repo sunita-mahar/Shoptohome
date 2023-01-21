@@ -1,64 +1,23 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { ImageBackground, StyleSheet, View, ScrollView, Text, TextInput, TouchableOpacity } from "react-native";
 import { Button } from "react-native-elements";
-//import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-//import MenuLeft from "./MenuLeft";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-// import { AuthContext } from "../App";
-import { useSelector, useDispatch } from "react-redux";
-import { setEmail, setPassword } from "../redux/action";
-import { LoginFunction } from "../redux/action";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-export const Login = ({ navigation }) => {
+export const Login = () => {
 
-
-  const item = AsyncStorage.getItem('key')
-    const email = useRef()
-    const password = useRef()
-    const getEmail = AsyncStorage.getItem("emailData")
-    const getpassword = AsyncStorage.getItem("passwordData")
-
-    useEffect(() => {
-        // Perform localStorage action
-        const item = AsyncStorage.getItem('key')
-    }, [])
-
-    // console.log(AsyncStorage.getItem('emailData'));
-    // console.log(AsyncStorage.getItem('passwordData'));
-
-    const submit = () => {
-          if (email.current.value=="sunita@123" && password.current.value=="123"){
-            AsyncStorage.setItem("emailData","sunita@123")
-            AsyncStorage.setItem("passwordData","123")
-
-    }
-}
-
-
-  const submitButton = () => {
-    navigation.navigate("home")
-    // getEmail&&getpassword?<Home/>:alert('Authentication not match') 
-
-  }
 
   return (
     <>
-      {/* <AuthContext.Consumer  {(email,password) => {
-
-      console.log(Context.Consumer.value);
-      return */}
 
 
       <ImageBackground source={require('../assets/images/banner_bg_img.jpg')} style={styles.bg_image}>
-
 
         <View style={styles.main_container}>
 
@@ -80,17 +39,16 @@ export const Login = ({ navigation }) => {
               <Text style={styles.signin} >Sign In</Text>
             </View>
 
-            <View  onPress={submit}>
+            <View >
               <Text style={{ fontSize: 15, }}>Enter Your Email</Text>
               {/* <TextInput style={styles.input_field} onChangeText={(ele)=>{console.log(ele)}} /> */}
               <TextInput
                 style={styles.input_field}
                 placeholder="Enter Email"
-                // onChangeText={newText => { setEmail(newText); console.log(newText); }}
-                onChangeText={(value) => setEmail(value)}
+                // onChangeText={newText => {  setEmail(newText); console.log(newText); }}
+                onChangeText={(ele) => { console.log(ele) }}
               // defaultValue={email}
               />
-
 
 
               <Text style={{ fontSize: 15, marginTop: 10, }}>Enter Your Password</Text>
@@ -99,7 +57,7 @@ export const Login = ({ navigation }) => {
                 style={styles.input_field}
                 placeholder="Password"
                 secureTextEntery={true}
-                onChangeText={(value) => setPassword(value)}
+              // onChangeText={(value) => setPassword(value)}
               // defaultValue={password}
               />
 
@@ -108,30 +66,10 @@ export const Login = ({ navigation }) => {
               </TouchableOpacity>
 
 
-              <TouchableOpacity onPress={submitButton}>
+
+              <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <Text style={styles.login_tx}> Login</Text>
               </TouchableOpacity>
-
-              {/* <TouchableOpacity onPress={async () => {
-                // navigation.navigate("home") 
-                console.log({ email, password });
-
-                await dispatch(setEmail(localEmail));
-               await dispatch(setPassword(localPassword));
-
-                if (email.toLowerCase() == auth.authEmail && password == auth.authPassword) {
-                  // const authValues = { email: email.toLowerCase(), password }
-                  // await AsyncStorage.setItem('AllProducts', authValues)
-
-                  navigation.navigate("home")
-                } else {
-                  alert('Authentication not match')
-                }
-
-              }}>
-                <Text style={styles.login_tx}> Login</Text>
-              </TouchableOpacity> */}
-
 
             </View>
 
@@ -141,11 +79,7 @@ export const Login = ({ navigation }) => {
 
       </ImageBackground>
 
-      {/* 
-     }}>
 
-
-     </AuthContext.Consumer> */}
     </>
 
 
